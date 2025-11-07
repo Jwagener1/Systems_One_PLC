@@ -1,0 +1,20 @@
+//CoDeSys Mapping Export V1.2
+//Mapped variable;//Parameter name @ counter in device;//Unit;//Description;//IEC address;//Device name;
+//Important: change only first, third or fourth column in Excel or add variable name before first ;
+;Input 0;;;%IW0;E_16DI
+;Bit0;;;%IX0.0;E_16DI
+;Bit1;;;%IX0.1;E_16DI
+;Bit2;;;%IX0.2;E_16DI
+;Bit3;;;%IX0.3;E_16DI
+;Bit4;;;%IX0.4;E_16DI
+;Bit5;;;%IX0.5;E_16DI
+;Bit6;;;%IX0.6;E_16DI
+;Bit7;;;%IX0.7;E_16DI
+;Bit8;;;%IX1.0;E_16DI
+;Bit9;;;%IX1.1;E_16DI
+;Bit10;;;%IX1.2;E_16DI
+;Bit11;;;%IX1.3;E_16DI
+;Bit12;;;%IX1.4;E_16DI
+;Bit13;;;%IX1.5;E_16DI
+;Bit14;;;%IX1.6;E_16DI
+;Bit15;;;%IX1.7;E_16DI
