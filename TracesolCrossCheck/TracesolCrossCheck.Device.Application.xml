@@ -37,14 +37,15 @@
         <Node name="Bit14" type="T_BIT_X_6" access="Read" directaddress="%IX1.6" />
         <Node name="Bit15" type="T_BIT_X_7" access="Read" directaddress="%IX1.7" />
         <Node name="Bit7" type="T_BIT_X_7" access="Read" directaddress="%IX0.7" />
-        <Node name="C1_Run" type="T_BIT_X_3" access="ReadWrite" directaddress="%QX0.3" />
-        <Node name="C2_Run" type="T_BIT_X_4" access="ReadWrite" directaddress="%QX0.4" />
-        <Node name="C3_Run" type="T_BIT_X_5" access="ReadWrite" directaddress="%QX0.5" />
-        <Node name="C4_Run" type="T_BIT_X_6" access="ReadWrite" directaddress="%QX0.6" />
+        <Node name="C1_Stop" type="T_BIT_X_3" access="ReadWrite" directaddress="%QX0.3" />
+        <Node name="C2_Stop" type="T_BIT_X_4" access="ReadWrite" directaddress="%QX0.4" />
+        <Node name="C3_Stop" type="T_BIT_X_5" access="ReadWrite" directaddress="%QX0.5" />
+        <Node name="C4_Stop" type="T_BIT_X_6" access="ReadWrite" directaddress="%QX0.6" />
         <Node name="CheckScan_Match" type="T_BOOL" access="ReadWrite" />
         <Node name="CheckScan_NoMatch" type="T_BOOL" access="ReadWrite" />
         <Node name="CheckScan_NoRead" type="T_BOOL" access="ReadWrite" />
         <Node name="CheckScan_Read" type="T_BOOL" access="ReadWrite" />
+        <Node name="Hardware_Override" type="T_BOOL" access="ReadWrite" />
         <Node name="Heart_Beat" type="T_BOOL" access="ReadWrite" />
         <Node name="InspectionCamera1_NoRead" type="T_BOOL" access="ReadWrite" />
         <Node name="InspectionCamera1_Read" type="T_BOOL" access="ReadWrite" />
@@ -76,9 +77,14 @@
         <Node name="SKU_NoMatch" type="T_BOOL" access="ReadWrite" />
         <Node name="Software_Error" type="T_BOOL" access="ReadWrite" />
         <Node name="Software_Override" type="T_BOOL" access="ReadWrite" />
+        <Node name="TEMP_Photoeye_Palletiser" type="T_BIT_X_2" access="Read" directaddress="%IX1.2" />
+        <Node name="TEMP_Photoeye_Print_Station" type="T_BIT_X_3" access="Read" directaddress="%IX1.3" />
+        <Node name="TEMP_Photoeye_Scan_Station_End" type="T_BIT_X_1" access="Read" directaddress="%IX1.1" />
+        <Node name="TEMP_Photoeye_Scan_Station_Start" type="T_BIT_X_0" access="Read" directaddress="%IX1.0" />
         <Node name="Trigger_Check_Scan" type="T_BIT_X_1" access="ReadWrite" directaddress="%QX1.1" />
         <Node name="Trigger_InspectionCamera1" type="T_BIT_X_2" access="ReadWrite" directaddress="%QX1.2" />
         <Node name="Trigger_InspectionCamera2" type="T_BIT_X_3" access="ReadWrite" directaddress="%QX1.3" />
+        <Node name="TS_3_Read" type="T_BOOL" access="ReadWrite" />
       </Node>
     </Node>
   </NodeList>
