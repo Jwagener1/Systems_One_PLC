@@ -28,8 +28,10 @@
         <Node name="Applicator_Label_Applied" type="T_BIT_X_2" access="Read" directaddress="%IX0.2" />
         <Node name="Applicator_Label_Present" type="T_BIT_X_4" access="Read" directaddress="%IX0.4" />
         <Node name="Applicator_Label_Running_Low" type="T_BIT_X_3" access="Read" directaddress="%IX0.3" />
-        <Node name="Applicator_Ready" type="T_BIT_X_0" access="Read" directaddress="%IX0.0" />
-        <Node name="Applicator_Reset" type="T_BIT_X_0" access="ReadWrite" directaddress="%QX1.0" />
+        <Node name="Applicator_Ready" type="T_BOOL" access="Read" />
+        <Node name="Applicator_Ready_Flag" type="T_BIT_X_0" access="Read" directaddress="%IX0.0" />
+        <Node name="Applicator_Reset" type="T_BOOL" access="ReadWrite" />
+        <Node name="Applicator_Reset_Signal" type="T_BIT_X_0" access="ReadWrite" directaddress="%QX1.0" />
         <Node name="Beacon_Lamp_State_Print_Station" type="T_INT" access="ReadWrite" />
         <Node name="Beacon_Lamp_State_Scan_Station" type="T_INT" access="ReadWrite" />
         <Node name="Bit12" type="T_BIT_X_4" access="Read" directaddress="%IX1.4" />
@@ -53,13 +55,13 @@
         <Node name="InspectionCamera2_Read" type="T_BOOL" access="ReadWrite" />
         <Node name="Label_Applied" type="T_BOOL" access="ReadWrite" />
         <Node name="Main_State" type="T_INT" access="ReadWrite" />
-        <Node name="Out_15" type="T_BIT_X_7" access="ReadWrite" directaddress="%QX1.7" />
         <Node name="Pallet_In_Place_1" type="T_BOOL" access="ReadWrite" />
         <Node name="Pallet_In_Place_2" type="T_BOOL" access="ReadWrite" />
         <Node name="PE_1_Error" type="T_BOOL" access="ReadWrite" />
         <Node name="PE_2_Error" type="T_BOOL" access="ReadWrite" />
         <Node name="PE_3_Error" type="T_BOOL" access="ReadWrite" />
         <Node name="PE_4_Error" type="T_BOOL" access="ReadWrite" />
+        <Node name="PE_State" type="T_INT" access="ReadWrite" />
         <Node name="Photoeye_Error" type="T_BOOL" access="ReadWrite" />
         <Node name="Photoeye_Palletiser" type="T_BOOL" access="Read" />
         <Node name="Photoeye_Print_Station" type="T_BOOL" access="Read" />
@@ -70,6 +72,7 @@
         <Node name="PrintStation_Green_Beacon_Lamp" type="T_BIT_X_4" access="ReadWrite" directaddress="%QX1.4" />
         <Node name="PrintStation_Orange_Beacon_Lamp" type="T_BIT_X_5" access="ReadWrite" directaddress="%QX1.5" />
         <Node name="PrintStation_Red_Beacon_Lamp" type="T_BIT_X_6" access="ReadWrite" directaddress="%QX1.6" />
+        <Node name="ScanStation_Blue_Beacon_Lamp" type="T_BIT_X_7" access="ReadWrite" directaddress="%QX1.7" />
         <Node name="ScanStation_Green_Beacon_Lamp" type="T_BIT_X_0" access="ReadWrite" directaddress="%QX0.0" />
         <Node name="ScanStation_Orange_Beacon_Lamp" type="T_BIT_X_1" access="ReadWrite" directaddress="%QX0.1" />
         <Node name="ScanStation_Red_Beacon_Lamp" type="T_BIT_X_2" access="ReadWrite" directaddress="%QX0.2" />
