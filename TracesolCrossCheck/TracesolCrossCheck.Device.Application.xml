@@ -85,8 +85,10 @@
         <Node name="TEMP_Photoeye_Scan_Station_End" type="T_BIT_X_1" access="Read" directaddress="%IX1.1" />
         <Node name="TEMP_Photoeye_Scan_Station_Start" type="T_BIT_X_0" access="Read" directaddress="%IX1.0" />
         <Node name="Trigger_Check_Scan" type="T_BIT_X_1" access="ReadWrite" directaddress="%QX1.1" />
+        <Node name="Trigger_IC2_Delay" type="T_INT" access="ReadWrite" />
         <Node name="Trigger_InspectionCamera1" type="T_BIT_X_2" access="ReadWrite" directaddress="%QX1.2" />
-        <Node name="Trigger_InspectionCamera2" type="T_BIT_X_3" access="ReadWrite" directaddress="%QX1.3" />
+        <Node name="Trigger_InspectionCamera2" type="T_BOOL" access="ReadWrite" />
+        <Node name="Trigger_InspectionCamera2_RAW" type="T_BIT_X_3" access="ReadWrite" directaddress="%QX1.3" />
         <Node name="TS_3_Read" type="T_BOOL" access="ReadWrite" />
       </Node>
     </Node>
