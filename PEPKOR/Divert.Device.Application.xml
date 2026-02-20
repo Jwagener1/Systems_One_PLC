@@ -6,12 +6,17 @@
     <ProjectInfo name="Divert" devicename="Device" appname="Application" />
   </Header>
   <TypeList>
+    <TypeSimple name="T_BIT_X_1" size="1" swapsize="0" typeclass="Bool" iecname="BIT" bitoffset="1" />
+    <TypeSimple name="T_BIT_X_2" size="1" swapsize="0" typeclass="Bool" iecname="BIT" bitoffset="2" />
+    <TypeSimple name="T_BIT_X_3" size="1" swapsize="0" typeclass="Bool" iecname="BIT" bitoffset="3" />
+    <TypeSimple name="T_BIT_X_4" size="1" swapsize="0" typeclass="Bool" iecname="BIT" bitoffset="4" />
+    <TypeSimple name="T_BIT_X_5" size="1" swapsize="0" typeclass="Bool" iecname="BIT" bitoffset="5" />
     <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
     <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
     <TypeSimple name="T_TIME" size="4" swapsize="4" typeclass="Time" iecname="TIME" />
     <TypeSimple name="T_UINT" size="2" swapsize="2" typeclass="UInt" iecname="UINT" />
-    <TypeArray name="T_ARRAY__1__100__OF_INT" size="200" nativesize="200" typeclass="Array" iecname="ARRAY [1..100] OF INT" basetype="T_INT">
-      <ArrayDim minrange="1" maxrange="100" />
+    <TypeArray name="T_ARRAY__1__21__OF_INT" size="42" nativesize="42" typeclass="Array" iecname="ARRAY [1..21] OF INT" basetype="T_INT">
+      <ArrayDim minrange="1" maxrange="21" />
     </TypeArray>
     <TypeUserDef name="T_R_TRIG" size="2" nativesize="8" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="R_TRIG">
       <UserDefElement iecname="CLK" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" />
@@ -23,32 +28,30 @@
       <UserDefElement iecname="Q" type="T_BOOL" byteoffset="8" vartype="VAR_OUTPUT" />
       <UserDefElement iecname="ET" type="T_TIME" byteoffset="12" vartype="VAR_OUTPUT" />
     </TypeUserDef>
-    <TypeUserDef name="T_FB_FIFO" size="208" nativesize="212" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="FB_FIFO">
+    <TypeUserDef name="T_FB_FIFO" size="50" nativesize="56" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="FB_FIFO">
       <UserDefElement iecname="MaxSize" type="T_UINT" byteoffset="0" vartype="VAR_INPUT" />
       <UserDefElement iecname="Count" type="T_UINT" byteoffset="2" vartype="VAR_OUTPUT" />
-      <UserDefElement iecname="Buffer" type="T_ARRAY__1__100__OF_INT" byteoffset="4" vartype="VAR" />
-      <UserDefElement iecname="Head" type="T_UINT" byteoffset="204" vartype="VAR" />
-      <UserDefElement iecname="Tail" type="T_UINT" byteoffset="206" vartype="VAR" />
+      <UserDefElement iecname="Buffer" type="T_ARRAY__1__21__OF_INT" byteoffset="4" vartype="VAR" />
+      <UserDefElement iecname="Head" type="T_UINT" byteoffset="46" vartype="VAR" />
+      <UserDefElement iecname="Tail" type="T_UINT" byteoffset="48" vartype="VAR" />
     </TypeUserDef>
   </TypeList>
   <NodeList>
     <Node name="Application">
       <Node name="PLC_PRG">
-        <Node name="Bad_Data" type="T_BOOL" access="ReadWrite" />
-        <Node name="Conveyor_Healthy" type="T_BOOL" access="ReadWrite" />
+        <Node name="Bad_Data" type="T_BIT_X_3" access="ReadWrite" directaddress="%QX0.3" />
+        <Node name="Conveyor_Healthy" type="T_BIT_X_3" access="Read" directaddress="%IX0.3" />
         <Node name="Data" type="T_INT" access="ReadWrite" />
         <Node name="Data_Ready" type="T_BOOL" access="ReadWrite" />
-        <Node name="Data_Release" type="T_BOOL" access="ReadWrite" />
-        <Node name="Direction_Backward" type="T_BOOL" access="ReadWrite" />
-        <Node name="Direction_Forward" type="T_BOOL" access="ReadWrite" />
+        <Node name="Data_Release" type="T_BIT_X_5" access="Read" directaddress="%IX0.5" />
         <Node name="fifo" type="T_FB_FIFO" access="ReadWrite" />
-        <Node name="Good_Read" type="T_BOOL" access="ReadWrite" />
+        <Node name="Good_Read" type="T_BIT_X_1" access="ReadWrite" directaddress="%QX0.1" />
         <Node name="Green" type="T_BOOL" access="ReadWrite" />
         <Node name="HB_ClearDelay" type="T_TON" access="ReadWrite" />
         <Node name="HB_RTrig" type="T_R_TRIG" access="ReadWrite" />
         <Node name="HB_Timeout" type="T_TON" access="ReadWrite" />
         <Node name="Heart_Beat" type="T_BOOL" access="ReadWrite" />
-        <Node name="No_Read" type="T_BOOL" access="ReadWrite" />
+        <Node name="No_Read" type="T_BIT_X_2" access="ReadWrite" directaddress="%QX0.2" />
         <Node name="Orange" type="T_BOOL" access="ReadWrite" />
         <Node name="PC_Ready" type="T_BOOL" access="ReadWrite" />
         <Node name="PopOK" type="T_BOOL" access="ReadWrite" />
@@ -57,7 +60,7 @@
         <Node name="Red" type="T_BOOL" access="ReadWrite" />
         <Node name="RisingEdge_Data_Ready" type="T_R_TRIG" access="ReadWrite" />
         <Node name="RisingEdge_Data_Release" type="T_R_TRIG" access="ReadWrite" />
-        <Node name="Running" type="T_BOOL" access="ReadWrite" />
+        <Node name="Running" type="T_BIT_X_4" access="Read" directaddress="%IX0.4" />
         <Node name="Software_Error" type="T_BOOL" access="ReadWrite" />
         <Node name="val" type="T_INT" access="ReadWrite" />
       </Node>

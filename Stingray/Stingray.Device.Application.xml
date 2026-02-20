@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbolconfiguration xmlns="http://www.3s-software.com/schemas/Symbolconfiguration.xsd">
+  <Header>
+    <Version>3.5.14.0</Version>
+    <SymbolConfigObject version="3.5.16.30" runtimeid="3.5.15.30" libversion="3.5.16.0" compiler="3.5.16.40" lmm="3.5.16.0" profile="CODESYS V3.5 SP16 Patch 4+" settings="SupportOPCUA, LayoutCalculator=OptimizedClientSideLayoutCalculator" />
+    <ProjectInfo name="Stingray" devicename="Device" appname="Application" />
+  </Header>
+  <TypeList>
+    <TypeSimple name="T_BOOL" size="1" swapsize="0" typeclass="Bool" iecname="BOOL" />
+    <TypeSimple name="T_INT" size="2" swapsize="2" typeclass="Int" iecname="INT" />
+    <TypeSimple name="T_TIME" size="4" swapsize="4" typeclass="Time" iecname="TIME" />
+    <TypeSimple name="T_UINT" size="2" swapsize="2" typeclass="UInt" iecname="UINT" />
+    <TypeSimple name="T_WORD" size="2" swapsize="2" typeclass="Word" iecname="WORD" />
+    <TypeUserDef name="T_FB_MotorStatusDecode" size="11" nativesize="16" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="FB_MotorStatusDecode">
+      <UserDefElement iecname="StatusWord" type="T_WORD" byteoffset="0" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Motor_Over_voltage" type="T_BOOL" byteoffset="2" vartype="VAR" />
+      <UserDefElement iecname="Motor_Voltage_Drop" type="T_BOOL" byteoffset="3" vartype="VAR" />
+      <UserDefElement iecname="Motor_Over_heat" type="T_BOOL" byteoffset="4" vartype="VAR" />
+      <UserDefElement iecname="Motor_Over_Current" type="T_BOOL" byteoffset="5" vartype="VAR" />
+      <UserDefElement iecname="Motor_Short_Circuit" type="T_BOOL" byteoffset="6" vartype="VAR" />
+      <UserDefElement iecname="Motor_Connection_Error" type="T_BOOL" byteoffset="7" vartype="VAR" />
+      <UserDefElement iecname="Motor_Over_load" type="T_BOOL" byteoffset="8" vartype="VAR" />
+      <UserDefElement iecname="Motor_Stalled" type="T_BOOL" byteoffset="9" vartype="VAR" />
+      <UserDefElement iecname="Motor_Sensor_Error" type="T_BOOL" byteoffset="10" vartype="VAR" />
+    </TypeUserDef>
+    <TypeUserDef name="T_ModbusTCPComState" size="2" nativesize="2" swapsize="2" typeclass="Enum" iecname="ModbusTCPComState" basetype="T_UINT">
+      <UserDefElement type="T_ModbusTCPComState" iecname="OFF" enumvalue="0" />
+      <UserDefElement type="T_ModbusTCPComState" iecname="CONNECTING" enumvalue="1" />
+      <UserDefElement type="T_ModbusTCPComState" iecname="CONNECTED" enumvalue="2" />
+      <UserDefElement type="T_ModbusTCPComState" iecname="DISCONNECTING" enumvalue="3" />
+      <UserDefElement type="T_ModbusTCPComState" iecname="SOCKET_ERROR" enumvalue="4" />
+    </TypeUserDef>
+    <TypeUserDef name="T_R_TRIG" size="2" nativesize="8" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="R_TRIG">
+      <UserDefElement iecname="CLK" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="1" vartype="VAR_OUTPUT" />
+    </TypeUserDef>
+    <TypeUserDef name="T_TON" size="16" nativesize="28" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="TON">
+      <UserDefElement iecname="IN" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" />
+      <UserDefElement iecname="PT" type="T_TIME" byteoffset="4" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Q" type="T_BOOL" byteoffset="8" vartype="VAR_OUTPUT" />
+      <UserDefElement iecname="ET" type="T_TIME" byteoffset="12" vartype="VAR_OUTPUT" />
+    </TypeUserDef>
+    <TypeUserDef name="T_ZPA_Registors" size="16" nativesize="16" typeclass="Userdef" pouclass="STRUCTURE" iecname="ZPA_Registors">
+      <UserDefElement iecname="Connected" type="T_BOOL" byteoffset="0" vartype="VAR" />
+      <UserDefElement iecname="Sensor" type="T_WORD" byteoffset="2" vartype="VAR" />
+      <UserDefElement iecname="R_Run" type="T_WORD" byteoffset="4" vartype="VAR" />
+      <UserDefElement iecname="R_Direction" type="T_WORD" byteoffset="6" vartype="VAR" />
+      <UserDefElement iecname="R_Motor_Status" type="T_WORD" byteoffset="8" vartype="VAR" />
+      <UserDefElement iecname="L_Run" type="T_WORD" byteoffset="10" vartype="VAR" />
+      <UserDefElement iecname="L_Direction" type="T_WORD" byteoffset="12" vartype="VAR" />
+      <UserDefElement iecname="L_Motor_Status" type="T_WORD" byteoffset="14" vartype="VAR" />
+    </TypeUserDef>
+    <TypeUserDef name="T_FB_HeartbeatWatchdog" size="38" nativesize="72" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="FB_HeartbeatWatchdog">
+      <UserDefElement iecname="Heart_Beat_In" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Heart_Beat_Out" type="T_BOOL" byteoffset="1" vartype="VAR_OUTPUT" />
+      <UserDefElement iecname="Software_Error" type="T_BOOL" byteoffset="2" vartype="VAR_OUTPUT" />
+      <UserDefElement iecname="HB_ClearDelay" type="T_TON" byteoffset="4" vartype="VAR" />
+      <UserDefElement iecname="HB_Timeout" type="T_TON" byteoffset="20" vartype="VAR" />
+      <UserDefElement iecname="HB_RTrig" type="T_R_TRIG" byteoffset="36" vartype="VAR" />
+    </TypeUserDef>
+    <TypeUserDef name="T_FB_Photoeye_Allignment_Alarm" size="29" nativesize="48" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="FB_Photoeye_Allignment_Alarm">
+      <UserDefElement iecname="PE_In" type="T_BOOL" byteoffset="0" vartype="VAR_INPUT" />
+      <UserDefElement iecname="MaxHighTime" type="T_TIME" byteoffset="4" vartype="VAR_INPUT" />
+      <UserDefElement iecname="InhibitTimer" type="T_BOOL" byteoffset="8" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Error" type="T_BOOL" byteoffset="9" vartype="VAR_OUTPUT" />
+      <UserDefElement iecname="HighTooLong" type="T_BOOL" byteoffset="10" vartype="VAR_OUTPUT" />
+      <UserDefElement iecname="T_High" type="T_TON" byteoffset="12" vartype="VAR" />
+      <UserDefElement iecname="CountCondition" type="T_BOOL" byteoffset="28" vartype="VAR" />
+    </TypeUserDef>
+    <TypeUserDef name="T_FB_ZPA_Connection" size="5" nativesize="12" typeclass="Userdef" pouclass="FUNCTION_BLOCK" iecname="FB_ZPA_Connection">
+      <UserDefElement iecname="ModbusState" type="T_ModbusTCPComState" byteoffset="0" vartype="VAR_INPUT" />
+      <UserDefElement iecname="Connected" type="T_BOOL" byteoffset="2" vartype="VAR_OUTPUT" />
+      <UserDefElement iecname="RawConnected" type="T_BOOL" byteoffset="3" vartype="VAR" />
+      <UserDefElement iecname="PrevRawConnected" type="T_BOOL" byteoffset="4" vartype="VAR" />
+    </TypeUserDef>
+  </TypeList>
+  <NodeList>
+    <Node name="Application">
+      <Node name="PLC_PRG">
+        <Node name="API_Result_Fail" type="T_BOOL" access="ReadWrite" />
+        <Node name="API_Result_Pass" type="T_BOOL" access="ReadWrite" />
+        <Node name="Bad_Read" type="T_BOOL" access="ReadWrite" />
+        <Node name="Conveyor_Healthy" type="T_BOOL" access="ReadWrite" />
+        <Node name="Current_State" type="T_INT" access="ReadWrite" />
+        <Node name="FB_LMotorDecode" type="T_FB_MotorStatusDecode" access="ReadWrite" />
+        <Node name="FB_PE_Induct" type="T_FB_Photoeye_Allignment_Alarm" access="ReadWrite" />
+        <Node name="FB_PE_Inplace" type="T_FB_Photoeye_Allignment_Alarm" access="ReadWrite" />
+        <Node name="Good_Read" type="T_BOOL" access="ReadWrite" />
+        <Node name="Green" type="T_BOOL" access="ReadWrite" />
+        <Node name="HB_Watchdog" type="T_FB_HeartbeatWatchdog" access="ReadWrite" />
+        <Node name="Heart_Beat" type="T_BOOL" access="ReadWrite" />
+        <Node name="Inhibit_Induct" type="T_BOOL" access="ReadWrite" />
+        <Node name="Inhibit_Inplace" type="T_BOOL" access="ReadWrite" />
+        <Node name="Inplace" type="T_BOOL" access="ReadWrite" />
+        <Node name="Motor_Connection_Error" type="T_BOOL" access="ReadWrite" />
+        <Node name="Motor_Max_Torque" type="T_BOOL" access="ReadWrite" />
+        <Node name="Motor_Over_Current" type="T_BOOL" access="ReadWrite" />
+        <Node name="Motor_Over_heat" type="T_BOOL" access="ReadWrite" />
+        <Node name="Motor_Over_load" type="T_BOOL" access="ReadWrite" />
+        <Node name="Motor_Over_voltage" type="T_BOOL" access="ReadWrite" />
+        <Node name="Motor_Sensor_Error" type="T_BOOL" access="ReadWrite" />
+        <Node name="Motor_Short_Circuit" type="T_BOOL" access="ReadWrite" />
+        <Node name="Motor_Stalled" type="T_BOOL" access="ReadWrite" />
+        <Node name="Motor_Voltage_Drop" type="T_BOOL" access="ReadWrite" />
+        <Node name="Next_State" type="T_INT" access="ReadWrite" />
+        <Node name="Orange" type="T_BOOL" access="ReadWrite" />
+        <Node name="Parcel_Release" type="T_BOOL" access="ReadWrite" />
+        <Node name="Parcel_Removed" type="T_BOOL" access="ReadWrite" />
+        <Node name="PE_Induct_Error" type="T_BOOL" access="ReadWrite" />
+        <Node name="PE_Induct_Parcel" type="T_BOOL" access="ReadWrite" />
+        <Node name="PE_Inplace" type="T_BOOL" access="ReadWrite" />
+        <Node name="PE_Inplace_Error" type="T_BOOL" access="ReadWrite" />
+        <Node name="PE_PE_Trigger_Cognex" type="T_BOOL" access="ReadWrite" />
+        <Node name="PE_Trigger_Cognex_Error" type="T_BOOL" access="ReadWrite" />
+        <Node name="Prev_State" type="T_INT" access="ReadWrite" />
+        <Node name="Red" type="T_BOOL" access="ReadWrite" />
+        <Node name="Scale_Running" type="T_BOOL" access="ReadWrite" />
+        <Node name="Scale_ZPA_Modbus_Connection" type="T_FB_ZPA_Connection" access="ReadWrite" />
+        <Node name="Scale_ZPA_Modbus_Connection_Status" type="T_BOOL" access="ReadWrite" />
+        <Node name="Siren" type="T_BOOL" access="ReadWrite" />
+        <Node name="Software_Error" type="T_BOOL" access="ReadWrite" />
+        <Node name="Start_Scale" type="T_BOOL" access="ReadWrite" />
+        <Node name="Stop_Scale" type="T_BOOL" access="ReadWrite" />
+        <Node name="Trigger_Cognex" type="T_BOOL" access="ReadWrite" />
+        <Node name="ZPA_Scale" type="T_ZPA_Registors" access="ReadWrite" />
+      </Node>
+    </Node>
+  </NodeList>
+</Symbolconfiguration>
