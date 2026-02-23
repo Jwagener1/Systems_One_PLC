@@ -110,7 +110,6 @@
         <Node name="PE_Induct_Parcel" type="T_BOOL" access="ReadWrite" />
         <Node name="PE_Inplace" type="T_BOOL" access="ReadWrite" />
         <Node name="PE_Inplace_Error" type="T_BOOL" access="ReadWrite" />
-        <Node name="PE_PE_Trigger_Cognex" type="T_BOOL" access="ReadWrite" />
         <Node name="PE_Trigger_Cognex_Error" type="T_BOOL" access="ReadWrite" />
         <Node name="Prev_State" type="T_INT" access="ReadWrite" />
         <Node name="Red" type="T_BOOL" access="ReadWrite" />
